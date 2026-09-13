@@ -1,0 +1,11 @@
+kode_guru,nama_guru,username,role,kode_mapel,nama_mapel,rombel_diampu,tahun_ajaran,status_data;;;;;;;;;;
+G001,Ahmad Setiawan,guru.ahmad,guru,MAT,Matematika,XII TKR 1; XII TKR 2; XII TKR 3; XII TKR 4; XII TKR 5; XII TKR 6; XII TKR 7; XII TKR 8; XII TKR 9; XII TKR 10; XII TKR 11,2026/2027,DUMMY
+G002,Budi Santoso,guru.budi,guru,MAT,Matematika,XII TKR 12; XII TSM 1; XII TSM 2; XII TSM 3; XII TSM 4; XII TSM 5; XII TSM 6; XII TSM 7; XII TSM 8; XII TAV 1,2026/2027,DUMMY;
+G003,Citra Lestari,guru.citra,guru,BIN,Bahasa Indonesia,XII TKR 1; XII TKR 2; XII TKR 3; XII TKR 4; XII TKR 5; XII TKR 6; XII TKR 7; XII TKR 8; XII TKR 9; XII TKR 10; XII TKR 11,2026/2027,DUMMY
+G004,Dedi Kurniawan,guru.dedi,guru,BIN,Bahasa Indonesia,XII TKR 12; XII TSM 1; XII TSM 2; XII TSM 3; XII TSM 4; XII TSM 5; XII TSM 6; XII TSM 7; XII TSM 8; XII TAV 1,2026/2027,DUMMY;
+G005,Eka Pratama,guru.eka,guru,BIG,Bahasa Inggris,XII TKR 1; XII TKR 2; XII TKR 3; XII TKR 4; XII TKR 5; XII TKR 6; XII TKR 7; XII TKR 8; XII TKR 9; XII TKR 10; XII TKR 11,2026/2027,DUMMY
+G006,Fajar Nugroho,guru.fajar,guru,BIG,Bahasa Inggris,XII TKR 12; XII TSM 1; XII TSM 2; XII TSM 3; XII TSM 4; XII TSM 5; XII TSM 6; XII TSM 7; XII TSM 8; XII TAV 1,2026/2027,DUMMY;
+G007,Gina Amelia,guru.gina,guru,SEJ,Sejarah,XII TKR 1; XII TKR 2; XII TKR 3; XII TKR 4; XII TKR 5; XII TKR 6; XII TKR 7; XII TKR 8; XII TKR 9; XII TKR 10; XII TKR 11,2026/2027,DUMMY
+G008,Hendra Wijaya,guru.hendra,guru,SEJ,Sejarah,XII TKR 12; XII TSM 1; XII TSM 2; XII TSM 3; XII TSM 4; XII TSM 5; XII TSM 6; XII TSM 7; XII TSM 8; XII TAV 1,2026/2027,DUMMY;
+G009,Intan Permata,guru.intan,guru,PPKN,Pendidikan Pancasila,XII TKR 1; XII TKR 2; XII TKR 3; XII TKR 4; XII TKR 5; XII TKR 6; XII TKR 7; XII TKR 8; XII TKR 9; XII TKR 10; XII TKR 11,2026/2027,DUMMY
+G010,Joko Ramadhan,guru.joko,guru,PPKN,Pendidikan Pancasila,XII TKR 12; XII TSM 1; XII TSM 2; XII TSM 3; XII TSM 4; XII TSM 5; XII TSM 6; XII TSM 7; XII TSM 8; XII TAV 1,2026/2027,DUMMY;

@@ -1,0 +1,3363 @@
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+PORTAL LES TKA 2026/2027
+Version:
+ 3.0
+Status:
+ Draft Final 
+untuk
+ 
+Pengembangan
+Platform:
+ Web Application
+Target:
+ 
+Siswa
+ 
+Kelas
+ XII, Guru/Staff, 
+Kepala
+ Sekolah, Admin
+Timezone
+:
+ Asia/Jakarta (WIB)
+1. 
+Ringkasan
+ 
+Produk
+Portal Les TKA 2026/2027
+ 
+adalah
+ 
+aplikasi
+ web internal 
+sekolah
+ yang 
+digunakan
+ 
+untuk
+ 
+mengelola
+ 
+kegiatan
+ les/
+pembelajaran
+ 
+tambahan
+ TKA 
+secara
+ 
+terstruktur
+, 
+mulai
+ 
+dari
+ 
+pembuatan
+ 
+sesi
+ oleh guru, 
+kehadiran
+ 
+siswa
+ 
+melalui
+ PIN, 
+bukti
+ 
+pelaksanaan
+ 
+pembelajaran
+, monitoring 
+Kepala
+ Sekolah, 
+hingga
+ 
+pengelolaan
+ data oleh Admin.
+Sistem
+ 
+dirancang
+ 
+berdasarkan
+ 
+struktur
+ 
+akademik
+ 
+sekolah
+ yang 
+terdiri
+ 
+dari
+:
+3 
+jurusan
+:
+ TKR, TSM, TAV
+21 
+rombel
+ 
+kelas
+ XII
+±768 
+siswa
+1 
+mata
+ 
+pelajaran
+ 
+dapat
+ 
+ditangani
+ oleh 2 guru
+Setiap
+ guru 
+memiliki
+ 
+rombel
+ 
+penugasan
+ masing-masing
+Sesi
+ les 
+hanya
+ 
+berlaku
+ 
+untuk
+ 
+rombel
+ yang 
+ditentukan
+ oleh guru
+Kehadiran
+ 
+dihitung
+ 
+berdasarkan
+ 
+siswa
+ yang 
+termasuk
+ 
+dalam
+ 
+rombel
+ target 
+sesi
+Sistem
+ 
+tidak
+ 
+menggunakan
+ 
+pembagian
+ 
+rombel
+ 
+berbasis
+ 
+teks
+ 
+bebas
+ 
+sebagai
+ 
+sumber
+ 
+utama
+. 
+Jurusan
+, 
+rombel
+, 
+mata
+ 
+pelajaran
+, guru, 
+siswa
+, dan 
+penugasan
+ 
+dibuat
+ 
+sebagai
+ data 
+terstruktur
+ agar 
+sistem
+ 
+dapat
+ 
+berkembang
+ dan 
+meminimalkan
+ 
+kesalahan
+ 
+administrasi
+.
+2. Tujuan 
+Sistem
+2.1 Tujuan Utama
+Membangun
+ 
+sistem
+ 
+terpusat
+ 
+untuk
+:
+Mengelola
+ 
+sesi
+ les TKA 
+secara
+ digital.
+Mengelola
+ 
+pembagian
+ guru dan 
+rombel
+ 
+secara
+ 
+terstruktur
+.
+Memastikan
+ 
+siswa
+ 
+hanya
+ 
+dapat
+ 
+mengikuti
+ 
+sesi
+ yang 
+sesuai
+ 
+dengan
+ 
+rombelnya
+.
+Mencatat
+ 
+kehadiran
+ 
+dengan
+ 
+mekanisme
+ check-in dan check-out.
+Menyediakan
+ 
+bukti
+ digital 
+pelaksanaan
+ 
+pembelajaran
+.
+Memudahkan
+ 
+Kepala
+ 
+Sekolah
+ 
+memonitor
+ 
+kegiatan
+ 
+secara
+ real-time.
+Mengurangi
+ 
+pencatatan
+ manual.
+Menyediakan
+ 
+histori
+ dan 
+laporan
+ yang 
+dapat
+ 
+diekspor
+.
+3. 
+Struktur
+ Akademik 
+Sekolah
+3.1 
+Jurusan
+Sistem
+ 
+memiliki
+ 
+tiga
+ 
+jurusan
+:
+Kode
+Jurusan
+Jumlah
+ 
+Rombel
+TKR
+Teknik 
+Kendaraan
+ 
+Ringan
+12
+TSM
+Teknik Sepeda Motor
+8
+TAV
+Teknik Audio Video
+1
+Total
+21
+3.2 
+Rombel
+Rombel
+ 
+kelas
+ XII:
+TKR
+XII TKR 1
+XII TKR 2
+XII TKR 3
+XII TKR 4
+XII TKR 5
+XII TKR 6
+XII TKR 7
+XII TKR 8
+XII TKR 9
+XII TKR 10
+XII TKR 11
+XII TKR 12
+TSM
+XII TSM 1
+XII TSM 2
+XII TSM 3
+XII TSM 4
+XII TSM 5
+XII TSM 6
+XII TSM 7
+XII TSM 8
+TAV
+XII TAV 1
+Total: 
+21 
+rombel
+.
+4. 
+Aturan
+ 
+Bisnis
+ Guru dan Mata Pelajaran
+Ini 
+merupakan
+ salah 
+satu
+ 
+aturan
+ inti 
+sistem
+.
+4.1 Satu Mata Pelajaran Dapat 
+Memiliki
+ Dua Guru
+Contoh
+:
+Matematika
+Guru A
+Guru B
+Kedua
+ guru 
+tersebut
+ 
+berada
+ di 
+bawah
+ 
+mata
+ 
+pelajaran
+ yang 
+sama
+.
+4.2 Dua Guru Tidak Harus 
+Mengajar
+ Rombel yang Sama
+Pembagian
+ 
+rombel
+ 
+dilakukan
+ 
+melalui
+ 
+penugasan
+.
+Contoh
+:
+Matematika
+Guru A:
+XII TKR 1–6
+Guru B:
+XII TKR 7–12
+Sehingga
+ 
+ketika
+ Guru A 
+membuat
+ 
+sesi
+, 
+sistem
+ 
+hanya
+ 
+memberikan
+ 
+akses
+ 
+terhadap
+ 
+rombel
+ yang 
+menjadi
+ 
+tanggung
+ 
+jawab
+ Guru A.
+4.3 Guru Tidak 
+Memilih
+ 
+Rombel
+ 
+Sembarangan
+Guru 
+hanya
+ 
+dapat
+ 
+membuat
+ 
+sesi
+ 
+untuk
+ 
+rombel
+ yang:
+Terhubung
+ 
+dengan
+ 
+mata
+ 
+pelajaran
+ yang 
+dia
+ 
+ajarkan
+.
+Ditugaskan
+ 
+kepada
+ guru 
+tersebut
+.
+Masih 
+aktif
+ pada 
+tahun
+ 
+ajaran
+ 
+berjalan
+.
+4.4 
+Penugasan
+ 
+Menjadi
+ 
+Sumber
+ Kebenaran 
+Sistem
+Sistem
+ 
+tidak
+ 
+boleh
+ 
+menentukan
+ 
+rombel
+ 
+berdasarkan
+ input 
+teks
+ manual pada 
+saat
+ 
+sesi
+ 
+dibuat
+.
+Hubungan
+ yang 
+digunakan
+:
+Guru → Mata Pelajaran → 
+Penugasan
+ 
+Rombel
+Contoh
+:
+Guru A
+└── 
+Matematika
+    
+├
+──
+ XII TKR 1
+    
+├
+──
+ XII TKR 2
+    
+├
+──
+ XII TKR 3
+    
+├
+──
+ XII TKR 4
+    
+├
+──
+ XII TKR 5
+    └── XII TKR 6
+5. 
+Asumsi
+ Utama 
+Pembagian
+ Guru
+PRD 
+ini
+ 
+menetapkan
+ 
+bahwa
+:
+Jika 
+satu
+ 
+mata
+ 
+pelajaran
+ 
+memiliki
+ dua guru, 
+kedua
+ guru 
+tersebut
+ 
+membagi
+ 
+rombel
+ yang 
+menjadi
+ 
+tanggung
+ 
+jawab
+ masing-masing.
+Artinya
+, model default 
+bukan
+ co-teaching.
+Contoh
+:
+MATEMATIKA
+│
+├
+──
+ Guru A
+│   
+├
+──
+ XII TKR 1
+│   
+├
+──
+ XII TKR 2
+│   └── XII TKR 3
+│
+└── Guru B
+    
+├
+──
+ XII TKR 4
+    
+├
+──
+ XII TKR 5
+    └── XII TKR 6
+Desain database 
+tetap
+ 
+dibuat
+ 
+cukup
+ 
+fleksibel
+ 
+untuk
+ 
+pengembangan
+ co-teaching di masa 
+depan
+.
+6. Role 
+Pengguna
+Sistem
+ 
+memiliki
+ 
+empat
+ role 
+utama
+:
+6.1 
+Siswa
+Hak 
+akses
+:
+Login
+Melihat
+ 
+sesi
+ 
+aktif
+ yang 
+diperuntukkan
+ 
+bagi
+ 
+rombelnya
+Check-in
+Check-out
+Melihat
+ status 
+kehadiran
+Melihat
+ 
+riwayat
+ 
+kehadiran
+Melihat
+ 
+profil
+Logout
+6.2 Guru / Staff
+Hak 
+akses
+ 
+utama
+:
+Login
+Melihat
+ dashboard
+Melihat
+ 
+penugasan
+ 
+mata
+ 
+pelajaran
+Melihat
+ 
+rombel
+ yang 
+menjadi
+ 
+tanggung
+ 
+jawab
+Membuat
+ 
+sesi
+ les
+Menentukan
+ 
+materi
+Memasukkan
+ link Google Meet
+Membuat
+ PIN 
+masuk
+Membuat
+ PIN 
+keluar
+Melihat
+ 
+peserta
+Melihat
+ 
+jumlah
+ 
+kehadiran
+Upload 
+bukti
+ 
+pelaksanaan
+Menyelesaikan
+ 
+sesi
+Melihat
+ 
+histori
+ 
+sesi
+6.3 
+Kepala
+ 
+Sekolah
+Hak 
+akses
+:
+Login
+Command 
+Center
+Monitoring 
+sesi
+ 
+aktif
+Melihat
+ guru 
+pengampu
+Melihat
+ 
+mata
+ 
+pelajaran
+Melihat
+ 
+rombel
+ target
+Melihat
+ 
+jumlah
+ 
+peserta
+Melihat
+ status 
+bukti
+ 
+mengajar
+Melihat
+ 
+histori
+ 
+kegiatan
+Filter 
+laporan
+Export data
+Kepala
+ Sekolah 
+bersifat
+ 
+read-only
+ 
+terhadap
+ 
+transaksi
+ 
+utama
+.
+6.4 Admin
+Hak 
+akses
+ 
+penuh
+:
+Master 
+siswa
+Master guru
+Master 
+jurusan
+Master 
+rombel
+Master 
+mata
+ 
+pelajaran
+Penugasan
+ guru
+Penugasan
+ guru-
+rombel
+User management
+Import 
+siswa
+Reset password
+Aktivitas
+ 
+sistem
+Pengaturan
+ 
+sistem
+7. 
+Struktur
+ Data Utama
+7.1 
+jurusan
+Menyimpan
+ master 
+jurusan
+.
+Field:
+id
+kode
+nama
+is_active
+timestamps
+Contoh
+:
+1 | TKR | Teknik 
+Kendaraan
+ 
+Ringan
+2 | TSM | Teknik Sepeda Motor
+3 | TAV | Teknik Audio Video
+7.2 
+rombel
+Menyimpan
+ 
+seluruh
+ 
+rombel
+.
+Field:
+id
+jurusan_id
+tingkat
+nomor
+nama
+tahun_ajaran
+is_active
+timestamps
+Contoh
+:
+id | 
+jurusan
+ | 
+tingkat
+ | 
+nomor
+ | nama
+1  |
+ TKR     | XII     | 1     | XII TKR 1
+2  |
+ TKR     | XII     | 2     | XII TKR 2
+...
+21 | TAV     | XII     | 1     | XII TAV 1
+7.3 users
+Untuk
+ 
+autentikasi
+ 
+pengguna
+ non-
+siswa
+ dan 
+dapat
+ 
+menjadi
+ parent account 
+untuk
+ 
+siswa
+ 
+bila
+ 
+diperlukan
+.
+Field:
+id
+name
+username
+email
+password
+role
+is_active
+last_login_at
+timestamps
+Role:
+admin
+kepsek
+guru
+staff
+Password 
+harus
+ 
+disimpan
+ 
+menggunakan
+ hashing.
+7.4 guru
+Profil
+ guru/staff 
+pengajar
+.
+Field:
+id
+user_id
+nip
+nama
+jenis_kelamin
+is_active
+timestamps
+7.5 
+master_siswa
+Profil
+ 
+siswa
+.
+Field:
+id
+user_id
+nisn
+nama
+jenis_kelamin
+rombel_id
+password / credential reference 
+jika
+ authentication 
+siswa
+ 
+dipisahkan
+is_active
+timestamps
+Catatan
+:
+ 
+rombel_id
+ 
+digunakan
+, 
+bukan
+ 
+menyimpan
+ nama 
+rombel
+ 
+sebagai
+ string 
+bebas
+.
+7.6 
+mata_pelajaran
+Master 
+mata
+ 
+pelajaran
+.
+Field:
+id
+kode
+nama
+is_active
+timestamps
+Contoh
+:
+MAT | 
+Matematika
+BIN | Bahasa Indonesia
+...
+7.7 
+guru_mapel
+Relasi
+ 
+antara
+ guru dan 
+mata
+ 
+pelajaran
+.
+Field:
+id
+guru_id
+mata_pelajaran_id
+tahun_ajaran
+is_active
+timestamps
+Satu 
+mata
+ 
+pelajaran
+ 
+dapat
+ 
+memiliki
+ 
+banyak
+ guru.
+Contoh
+:
+Matematika
+├
+──
+ Guru A
+└── Guru B
+7.8 
+penugasan_rombel
+Relasi
+ guru-
+mapel
+ 
+dengan
+ 
+rombel
+.
+Field:
+id
+guru_mapel_id
+rombel_id
+tahun_ajaran
+is_active
+timestamps
+Contoh
+:
+Guru A + 
+Matematika
+├
+──
+ XII TKR 1
+├
+──
+ XII TKR 2
+├
+──
+ XII TKR 3
+├
+──
+ XII TKR 4
+├
+──
+ XII TKR 5
+└── XII TKR 6
+Constraint 
+penting
+:
+Guru 
+hanya
+ 
+boleh
+ 
+memiliki
+ 
+rombel
+ yang valid 
+untuk
+ 
+mata
+ 
+pelajaran
+ 
+tersebut
+.
+Tidak 
+boleh
+ 
+ada
+ 
+duplikasi
+ 
+penugasan
+ 
+aktif
+ yang 
+sama
+.
+8. 
+Struktur
+ 
+Sesi
+ Les
+8.1 
+sesi_les
+Field 
+utama
+:
+id
+session_code
+guru_id
+mata_pelajaran_id
+materi
+link_meet
+pin_masuk
+pin_keluar
+foto_bukti
+foto_bukti_uploaded_at
+status
+waktu_mulai
+waktu_selesai
+created_at
+updated_at
+Status:
+berjalan
+selesai
+dibatalkan
+8.2 
+sesi_les_rombel
+Karena 
+satu
+ 
+sesi
+ 
+dapat
+ 
+ditujukan
+ 
+kepada
+ 
+satu
+ 
+atau
+ 
+beberapa
+ 
+rombel
+ yang 
+menjadi
+ 
+penugasan
+ guru.
+Field:
+id
+sesi_id
+rombel_id
+timestamps
+Contoh
+:
+Sesi
+ 
+Matematika
+ - Guru A
+│
+├
+──
+ XII TKR 1
+├
+──
+ XII TKR 2
+└── XII TKR 3
+9. 
+Perhitungan
+ 
+Peserta
+ 
+Sesi
+Ini 
+adalah
+ 
+aturan
+ 
+penting
+.
+Sistem
+ 
+tidak
+ 
+menganggap
+ 
+semua
+ 
+siswa
+ 
+sekolah
+ 
+sebagai
+ 
+peserta
+.
+Jumlah
+ 
+peserta
+ yang 
+diharapkan
+ 
+dihitung
+ 
+dari
+:
+Jumlah
+ 
+siswa
+yang 
+berada
+ pada
+rombel
+ target 
+sesi
+Contoh
+:
+Sesi
+ 
+menargetkan
+:
+XII TKR 1
+XII TKR 2
+XII TKR 3
+Maka:
+Expected Participants
+=
+jumlah
+ 
+siswa
+ XII TKR 1
++
+jumlah
+ 
+siswa
+ XII TKR 2
++
+jumlah
+ 
+siswa
+ XII TKR 3
+Bukan
+:
+768 
+siswa
+10. 
+Absensi
+ 
+Siswa
+10.1 
+absensi_siswa
+Field:
+id
+sesi_id
+siswa_id
+waktu_checkin
+waktu_checkout
+status_kehadiran
+ip_checkin
+ip_checkout
+timestamps
+Unique constraint:
+unique(
+sesi_id
+, 
+siswa_id
+)
+Satu 
+siswa
+ 
+tidak
+ 
+boleh
+ 
+memiliki
+ dua record 
+absensi
+ pada 
+sesi
+ yang 
+sama
+.
+11. Status 
+Kehadiran
+Status:
+Belum Hadir
+Belum 
+melakukan
+ check-in.
+Hadir Sebagian
+Siswa
+ 
+berhasil
+ check-in 
+tetapi
+ 
+belum
+ check-out.
+Hadir 
+Penuh
+Siswa
+ 
+berhasil
+ check-in dan check-out.
+ALPA
+Siswa
+ 
+termasuk
+ 
+peserta
+ target 
+sesi
+ 
+tetapi
+ 
+tidak
+ 
+melakukan
+ check-in 
+sampai
+ 
+sesi
+ 
+ditutup
+ 
+sesuai
+ 
+aturan
+ 
+sistem
+.
+12. Formula 
+Kehadiran
+Misalnya
+ 
+sesi
+ 
+memiliki
+:
+Expected:
+ 36 
+siswa
+Check-in:
+ 31 
+siswa
+Maka:
+Belum Hadir = 36 - 31
+Jika 
+dari
+ 31 
+siswa
+:
+28 
+melakukan
+ check-out
+3 
+belum
+ check-out
+Maka:
+Hadir 
+Penuh
+   = 28
+Hadir Sebagian = 3
+Belum Hadir    = 5
+Setelah
+ 
+sesi
+ 
+ditutup
+:
+ALPA = Expected - 
+Siswa
+ yang Check-in
+Sehingga
+:
+ALPA = 36 - 31
+ALPA = 5
+13. Landing Page
+Halaman 
+pertama
+ 
+menampilkan
+ dua 
+pilihan
+ 
+besar
+:
+MASUK SEBAGAI SISWA
+Untuk
+ 
+siswa
+ 
+kelas
+ XII.
+MASUK SEBAGAI GURU / STAFF
+Untuk
+:
+Guru
+Staff
+Kepala
+ Sekolah
+Admin
+Desain 
+harus
+ 
+sederhana
+, modern, dan 
+jelas
+.
+14. Login 
+Siswa
+Field:
+NISN / username
+Password
+Setelah
+ 
+berhasil
+:
+Dashboard 
+Siswa
+Sistem
+ 
+membaca
+ 
+rombel_id
+ 
+siswa
+ 
+sehingga
+ 
+sesi
+ yang 
+tampil
+ 
+hanya
+ 
+sesi
+ yang 
+relevan
+ 
+dengan
+ 
+rombel
+ 
+siswa
+.
+15. Dashboard 
+Siswa
+Informasi
+ 
+utama
+:
+Nama 
+siswa
+NISN
+Jurusan
+Rombel
+Status 
+kehadiran
+ 
+hari
+ 
+ini
+Sesi
+ 
+aktif
+Riwayat 
+terbaru
+Menu:
+Dashboard
+Absensi
+Riwayat
+Profil
+Logout
+16. 
+Sesi
+ 
+Aktif
+ 
+Siswa
+Siswa
+ 
+hanya
+ 
+melihat
+ 
+sesi
+ yang:
+Berstatus
+ 
+berjalan
+.
+Rombel
+ 
+siswa
+ 
+termasuk
+ target 
+sesi
+.
+Belum 
+melakukan
+ check-in.
+Card 
+sesi
+ 
+menampilkan
+:
+MATEMATIKA
+Persamaan
+ 
+Kuadrat
+Guru:
+Budi Santoso
+Rombel
+:
+XII TKR 1
+Status:
+SEDANG BERLANGSUNG
+Button:
+CHECK-IN
+17. Check-In 
+Siswa
+Siswa
+ 
+memasukkan
+ PIN 
+masuk
+ yang 
+diberikan
+ guru.
+PIN:
+6 
+karakter
+Tidak 
+mudah
+ 
+ditebak
+Memiliki
+ rate limiting
+Hanya valid 
+untuk
+ 
+sesi
+ 
+terkait
+Jika valid:
+Check-in 
+berhasil
+Status: HADIR SEBAGIAN
+Sistem
+ 
+menyimpan
+:
+waktu
+ check-in
+siswa
+sesi
+IP 
+bila
+ 
+diperlukan
+18. Google Meet
+Setelah
+ check-in 
+berhasil
+, 
+siswa
+ 
+mendapatkan
+ 
+tombol
+:
+JOIN GOOGLE MEET
+Link 
+berasal
+ 
+dari
+ 
+sesi
+ yang 
+dibuat
+ guru.
+Sistem
+ 
+tidak
+ 
+membuat
+ video conference 
+sendiri
+.
+19. Check-Out
+Saat 
+pembelajaran
+ 
+selesai
+:
+Guru 
+memberikan
+ PIN 
+keluar
+.
+Siswa
+ 
+memasukkan
+ PIN.
+Sistem
+ 
+memvalidasi
+ PIN.
+waktu_checkout
+ 
+disimpan
+.
+Status 
+berubah
+ 
+menjadi
+:
+HADIR PENUH
+20. 
+Pencegahan
+ 
+Manipulasi
+ 
+Absensi
+Sistem
+ 
+harus
+ 
+mencegah
+:
+Check-in dua kali
+Check-out 
+sebelum
+ check-in
+Check-out 
+untuk
+ 
+sesi
+ 
+berbeda
+PIN 
+sesi
+ lain
+Akses 
+siswa
+ 
+dari
+ 
+rombel
+ yang 
+tidak
+ 
+termasuk
+ target
+Akses 
+sesi
+ yang 
+sudah
+ 
+selesai
+Brute-force PIN
+Rate limiting 
+diterapkan
+ pada endpoint 
+validasi
+ PIN.
+21. Dashboard Guru
+Dashboard guru 
+menampilkan
+:
+Ringkasan
+Sesi
+ 
+sedang
+ 
+berjalan
+Sesi
+ 
+hari
+ 
+ini
+Jumlah
+ 
+rombel
+ 
+penugasan
+Jumlah
+ 
+mata
+ 
+pelajaran
+Histori
+ 
+mengajar
+Penugasan
+ Saya
+Contoh
+:
+MATEMATIKA
+Rombel
+:
+XII TKR 1
+XII TKR 2
+XII TKR 3
+XII TKR 4
+XII TKR 5
+XII TKR 6
+22. 
+Membuat
+ 
+Sesi
+ Les
+Form:
+Mata Pelajaran
+Dropdown 
+hanya
+ 
+menampilkan
+ 
+mata
+ 
+pelajaran
+ yang 
+dimiliki
+ guru.
+Rombel
+ Target
+Sistem
+ 
+hanya
+ 
+menampilkan
+ 
+rombel
+ yang 
+menjadi
+ 
+penugasan
+ guru 
+untuk
+ 
+mapel
+ 
+tersebut
+.
+Contoh
+:
+☑
+ XII TKR 1
+☑
+ XII TKR 2
+☐
+ XII TKR 7
+Jika XII TKR 7 
+bukan
+ 
+penugasan
+ guru:
+Tidak 
+boleh
+ 
+dipilih
+.
+Materi
+Input 
+materi
+ 
+pembelajaran
+.
+Google Meet
+Input URL Google Meet.
+Setelah
+ submit:
+Sistem
+ 
+membuat
+ 
+sesi
+.
+23. PIN Masuk
+Setelah
+ 
+sesi
+ 
+dibuat
+:
+PIN MASUK
+7K4M2P
+PIN 
+harus
+ 
+dapat
+ 
+diakses
+ guru 
+dengan
+ 
+mudah
+ 
+tetapi
+ 
+tidak
+ 
+tampil
+ di 
+halaman
+ 
+publik
+.
+Guru 
+dapat
+ 
+memberikan
+ PIN 
+kepada
+ 
+siswa
+ 
+melalui
+:
+papan
+ 
+tulis
+grup
+chat
+penyampaian
+ 
+langsung
+24. Live Session Guru
+Saat 
+sesi
+ 
+berjalan
+, guru 
+melihat
+:
+MATEMATIKA
+Persamaan
+ 
+Kuadrat
+XII TKR 1
+XII TKR 2
+XII TKR 3
+EXPECTED
+108
+CHECK-IN
+96
+HADIR PENUH
+82
+HADIR SEBAGIAN
+14
+BELUM HADIR
+12
+Daftar 
+peserta
+ 
+dapat
+ 
+ditampilkan
+ per 
+rombel
+.
+25. Monitoring Per 
+Rombel
+Karena 
+satu
+ 
+sesi
+ 
+dapat
+ 
+mencakup
+ 
+beberapa
+ 
+rombel
+, guru 
+dapat
+ 
+melihat
+:
+XII TKR 1
+34 / 36 Hadir
+XII TKR 2
+32 / 35 Hadir
+XII TKR 3
+30 / 37 Hadir
+Hal 
+ini
+ 
+memudahkan
+ guru 
+mengetahui
+ 
+rombel
+ mana yang 
+belum
+ 
+lengkap
+.
+26. Bukti 
+Pelaksanaan
+ 
+Mengajar
+Guru 
+wajib
+ 
+mengunggah
+ 
+foto
+/screenshot 
+bukti
+ 
+pelaksanaan
+.
+Format yang 
+diperbolehkan
+:
+JPG
+JPEG
+PNG
+ukuran
+ 
+maksimum
+ 
+ditentukan
+ 
+sistem
+Data:
+file
+waktu
+ upload
+guru
+sesi
+Setelah
+ upload:
+Bukti 
+Mengajar
+:
+✓
+ 
+Sudah
+ 
+diunggah
+27. 
+Menyelesaikan
+ 
+Sesi
+Sebelum
+ 
+menyelesaikan
+ 
+sesi
+ 
+sistem
+ 
+memvalidasi
+:
+Guru 
+adalah
+ 
+pembuat
+ 
+sesi
+.
+Sesi
+ 
+masih
+ 
+berjalan
+.
+Bukti 
+mengajar
+ 
+sudah
+ 
+diupload
+.
+Guru 
+kemudian
+:
+SELESAIKAN SESI
+Sistem
+:
+Menyimpan
+ 
+waktu
+ 
+selesai
+.
+Mengubah
+ status 
+menjadi
+ 
+selesai
+.
+Mengunci
+ 
+transaksi
+ 
+absensi
+ 
+sesuai
+ 
+aturan
+ 
+penutupan
+.
+Menentukan
+ 
+siswa
+ ALPA.
+28. 
+Kepala
+ Sekolah — Command 
+Center
+Halaman 
+utama
+ 
+Kepala
+ Sekolah 
+merupakan
+ 
+pusat
+ monitoring.
+Card 
+sesi
+ 
+aktif
+:
+MATEMATIKA
+Budi Santoso
+Rombel
+:
+XII TKR 1–6
+Peserta
+:
+210
+Hadir:
+194
+Bukti:
+✓
+ 
+Sudah
+Mulai:
+08:00 WIB
+29. Status Bukti 
+Mengajar
+Indikator
+ visual:
+Kuning
+Bukti 
+belum
+ 
+tersedia
+.
+Hijau
+Bukti 
+sudah
+ 
+diupload
+.
+Kepala
+ Sekolah 
+dapat
+ 
+membuka
+ 
+bukti
+ 
+tanpa
+ 
+dapat
+ 
+mengubahnya
+.
+30. Monitoring Real-Time
+Command 
+Center
+ 
+menggunakan
+ polling 
+berkala
+.
+Default:
+10–30 
+detik
+Data yang 
+diperbarui
+:
+sesi
+ 
+aktif
+jumlah
+ check-in
+jumlah
+ check-out
+status 
+bukti
+jumlah
+ 
+peserta
+Untuk
+ 
+tahap
+ 
+lanjutan
+ 
+dapat
+ 
+menggunakan
+:
+Laravel Reverb / WebSocket
+tanpa
+ 
+mengubah
+ 
+desain
+ data 
+utama
+.
+31. 
+Histori
+ 
+Kegiatan
+Kepala
+ Sekolah 
+dapat
+ 
+melihat
+ 
+histori
+ 
+berdasarkan
+:
+tanggal
+guru
+mata
+ 
+pelajaran
+jurusan
+rombel
+status 
+sesi
+status 
+bukti
+Contoh
+:
+Tanggal
+Guru
+Mapel
+Rombel
+Mulai
+Selesai
+Peserta
+Hadir
+ALPA
+Bukti
+32. Export
+Data 
+histori
+ 
+dapat
+ 
+diekspor
+ 
+ke
+:
+XLSX / Excel
+CSV
+Export 
+dapat
+ 
+difilter
+ 
+berdasarkan
+:
+tanggal
+jurusan
+rombel
+mata
+ 
+pelajaran
+guru
+33. Modul Admin
+Admin 
+memiliki
+ 
+modul
+:
+Master 
+Jurusan
+CRUD 
+jurusan
+.
+Master 
+Rombel
+CRUD 
+rombel
+.
+Master Guru
+CRUD guru.
+Master 
+Siswa
+CRUD/import 
+siswa
+.
+Master Mata Pelajaran
+CRUD 
+mata
+ 
+pelajaran
+.
+Penugasan
+ Guru
+Menentukan
+:
+Guru + Mata Pelajaran
+Penugasan
+ 
+Rombel
+Menentukan
+:
+Guru + Mata Pelajaran + 
+Rombel
+34. Import 
+Siswa
+Admin 
+dapat
+ 
+melakukan
+ import CSV.
+Minimal field:
+NISN
+Nama
+Jenis Kelamin
+Jurusan
+Rombel
+Password
+Sistem
+ 
+melakukan
+ 
+validasi
+:
+NISN 
+wajib
+ 
+unik
+.
+Rombel
+ 
+harus
+ 
+tersedia
+.
+Jurusan
+ 
+harus
+ valid.
+Format data 
+harus
+ 
+benar
+.
+Data 
+duplikat
+ 
+ditolak
+ 
+atau
+ 
+diberi
+ 
+laporan
+ error.
+35. 
+Aktivitas
+ 
+Sistem
+Tabel:
+activity_logs
+Field:
+id
+user_id
+action
+description
+ip_address
+created_at
+Aktivitas
+ yang 
+dicatat
+ 
+antara
+ lain:
+login
+logout
+membuat
+ 
+sesi
+mengubah
+ 
+sesi
+upload 
+bukti
+menyelesaikan
+ 
+sesi
+check-in
+check-out
+import 
+siswa
+reset password
+36. 
+Relasi
+ Database
+Struktur
+ 
+utama
+:
+JURUSAN
+   │
+   └── ROMBEL
+          │
+          └── SISWA
+MATA PELAJARAN
+   │
+   └── GURU_MAPEL
+          │
+          
+├
+──
+ GURU
+          │
+          └── PENUGASAN_ROMBEL
+                   │
+                   └── ROMBEL
+GURU
+   │
+   └── SESI_LES
+          │
+          
+├
+──
+ MATA_PELAJARAN
+          │
+          └── SESI_LES_ROMBEL
+                   │
+                   └── ROMBEL
+                         │
+                         └── SISWA
+                               │
+                               └── ABSENSI_SISWA
+37. 
+Aturan
+ 
+Validasi
+ 
+Sesi
+Ketika guru 
+membuat
+ 
+sesi
+:
+Guru
+↓
+Mata Pelajaran 
+milik
+ Guru
+↓
+Rombel
+ 
+penugasan
+ Guru pada Mapel 
+tersebut
+↓
+Rombel
+ 
+dipilih
+↓
+Sesi
+ 
+dibuat
+Backend 
+wajib
+ 
+melakukan
+ 
+validasi
+ 
+ulang
+.
+Frontend 
+tidak
+ 
+boleh
+ 
+menjadi
+ 
+satu-satunya
+ 
+lapisan
+ 
+keamanan
+.
+38. 
+Larangan
+ Data Tidak 
+Konsisten
+Sistem
+ 
+harus
+ 
+mencegah
+:
+Guru 
+mengajar
+ 
+mapel
+ yang 
+tidak
+ 
+ditugaskan
+.
+Tidak 
+boleh
+.
+Guru 
+memilih
+ 
+rombel
+ yang 
+bukan
+ 
+tanggung
+ 
+jawabnya
+.
+Tidak 
+boleh
+.
+Siswa
+ 
+mengikuti
+ 
+sesi
+ 
+dari
+ 
+rombel
+ lain.
+Tidak 
+boleh
+.
+Siswa
+ 
+muncul
+ dua kali 
+dalam
+ 
+satu
+ 
+sesi
+.
+Tidak 
+boleh
+.
+Sesi
+ 
+memiliki
+ 
+rombel
+ yang 
+tidak
+ 
+mempunyai
+ 
+siswa
+.
+Dapat 
+dibuat
+ warning pada 
+saat
+ 
+pembuatan
+ 
+sesi
+.
+39. 
+Konflik
+ 
+Sesi
+ Guru
+Satu guru 
+tidak
+ 
+boleh
+ 
+memiliki
+ 
+lebih
+ 
+dari
+ 
+satu
+ 
+sesi
+ 
+dengan
+ status:
+berjalan
+pada 
+waktu
+ yang 
+sama
+.
+Jika guru 
+mencoba
+ 
+membuat
+ 
+sesi
+ 
+kedua
+:
+Guru 
+masih
+ 
+memiliki
+ 
+sesi
+ yang 
+sedang
+ 
+berjalan
+. 
+Selesaikan
+ 
+sesi
+ 
+sebelumnya
+ 
+terlebih
+ 
+dahulu
+.
+40. Session Code
+Setiap
+ 
+sesi
+ 
+memiliki
+:
+session_code
+Contoh
+:
+TKA-2026-09-00125
+Digunakan
+ 
+untuk
+:
+identifikasi
+debugging
+histori
+audit
+41. Security
+Sistem
+ 
+wajib
+ 
+memiliki
+:
+CSRF protection
+Authentication middleware
+Role middleware
+Authorization / Policy
+Password hashing
+Validation
+Rate limiting
+Secure session
+SQL injection protection
+XSS protection
+File upload validation
+Access control
+Audit logging
+PIN 
+harus
+ 
+memiliki
+ masa 
+berlaku
+ 
+mengikuti
+ status 
+sesi
+.
+42. 
+Timezone
+Seluruh
+ 
+transaksi
+ 
+waktu
+ 
+menggunakan
+:
+Asia/Jakarta
+Format 
+tampilan
+:
+DD-MM-YYYY 
+HH:mm
+ WIB
+Laravel Carbon 
+digunakan
+ 
+untuk
+ 
+seluruh
+ 
+manipulasi
+ 
+waktu
+.
+43. Transaction Integrity
+Operasi
+ 
+penting
+ 
+menggunakan
+ database transaction.
+Contoh
+ 
+pembuatan
+ 
+sesi
+:
+BEGIN TRANSACTION
+Create 
+sesi
+↓
+Create target 
+rombel
+↓
+Commit
+Apabila
+ 
+gagal
+:
+ROLLBACK
+Tidak 
+boleh
+ 
+terjadi
+ 
+sesi
+ 
+tanpa
+ target 
+rombel
+.
+44. AJAX / API
+Operasi
+ yang 
+membutuhkan
+ 
+pembaruan
+ 
+dinamis
+ 
+dapat
+ 
+menggunakan
+:
+AJAX
+Fetch API
+Contoh
+:
+refresh participant count
+check status 
+sesi
+validasi
+ PIN
+upload 
+bukti
+monitoring Command 
+Center
+45. 
+Teknologi
+Backend
+Laravel
+Database
+MySQL
+Frontend
+Blade / Laravel
+Tailwind CSS
+Alpine.js
+AJAX / Fetch API
+Authentication
+Laravel Authentication
+File Storage
+Laravel Filesystem / Storage
+Time Handling
+Carbon
+Optional Future
+Laravel Reverb / WebSocket
+46. 
+Arsitektur
+ Modul
+Sistem
+ 
+dibagi
+ 
+menjadi
+:
+MODULE 01
+Authentication
+MODULE 02
+Master Data
+MODULE 03
+Academic Structure
+MODULE 04
+Teacher Assignment
+MODULE 05
+Lesson Session
+MODULE 06
+Student Attendance
+MODULE 07
+Teaching Evidence
+MODULE 08
+Principal Command 
+Center
+MODULE 09
+Reports & Export
+MODULE 10
+Audit & Security
+47. MVP
+Fase 
+pertama
+ 
+wajib
+ 
+mencakup
+:
+Authentication
+Login 
+siswa
+Login guru/staff
+Logout
+Role access
+Master Data
+Jurusan
+Rombel
+Siswa
+Guru
+Mapel
+Assignment
+Guru-
+mapel
+Guru-
+mapel
+-
+rombel
+Session
+Create session
+PIN 
+masuk
+PIN 
+keluar
+Google Meet
+Target 
+rombel
+Attendance
+Check-in
+Check-out
+Hadir Sebagian
+Hadir 
+Penuh
+ALPA
+Evidence
+Upload 
+bukti
+Monitoring
+Command 
+Center
+Report
+Histori
+Export
+48. Future Development
+Fitur 
+lanjutan
+:
+QR Code attendance
+Notifikasi
+ WhatsApp
+Push notification
+Dashboard 
+statistik
+Grafik
+ 
+kehadiran
+Rekap
+ per guru
+Rekap
+ per 
+rombel
+Rekap
+ per 
+jurusan
+Jadwal 
+otomatis
+Presensi
+ 
+berbasis
+ 
+lokasi
+Realtime WebSocket
+Mobile PWA
+Co-teaching
+49. 
+Skenario
+ Utama 
+Sistem
+Skenario
+ A — Guru 
+Membuat
+ 
+Sesi
+Guru login
+↓
+Pilih
+ Mata Pelajaran
+↓
+Sistem
+ 
+menampilkan
+ 
+rombel
+ 
+penugasan
+↓
+Guru 
+memilih
+ 
+rombel
+↓
+Isi 
+materi
+↓
+Isi Google Meet
+↓
+Create Session
+↓
+Generate PIN Masuk
+↓
+Sesi
+ 
+Berjalan
+Skenario
+ B — 
+Siswa
+ Hadir
+Siswa
+ login
+↓
+Sistem
+ 
+membaca
+ 
+Rombel
+↓
+Sistem
+ 
+menampilkan
+ 
+sesi
+ 
+sesuai
+ 
+rombel
+↓
+Siswa
+ 
+pilih
+ 
+sesi
+↓
+Masukkan PIN
+↓
+CHECK-IN
+↓
+Hadir Sebagian
+↓
+Join Google Meet
+↓
+Guru 
+memberikan
+ PIN 
+Keluar
+↓
+Siswa
+ Check-out
+↓
+Hadir 
+Penuh
+Skenario
+ C — 
+Sesi
+ 
+Selesai
+Guru
+↓
+Upload Bukti
+↓
+Finish Session
+↓
+Sistem
+ 
+menentukan
+ 
+siswa
+ yang 
+tidak
+ check-in
+↓
+ALPA
+↓
+Histori
+ 
+tersimpan
+↓
+Kepala
+ Sekolah 
+dapat
+ 
+melihat
+ 
+laporan
+50. 
+Contoh
+ 
+Implementasi
+ 
+Nyata
+Misalnya
+ 
+mata
+ 
+pelajaran
+ 
+Bahasa 
+Inggris
+ 
+mempunyai
+ dua guru:
+Guru A
+Guru B
+Penugasan
+:
+Guru A
+├
+──
+ XII TKR 1
+├
+──
+ XII TKR 2
+├
+──
+ XII TKR 3
+├
+──
+ XII TSM 1
+└── XII TSM 2
+Guru B
+├
+──
+ XII TKR 4
+├
+──
+ XII TKR 5
+├
+──
+ XII TKR 6
+├
+──
+ XII TSM 3
+└── XII TSM 4
+Saat Guru A login, 
+sistem
+ 
+tidak
+ 
+hanya
+ 
+mengatakan
+:
+Guru A 
+mengajar
+ Bahasa 
+Inggris
+.
+Tetapi:
+Guru A 
+mengajar
+ Bahasa 
+Inggris
+ 
+untuk
+ XII TKR 1, XII TKR 2, XII TKR 3, XII TSM 1, dan XII TSM 2.
+Inilah
+ yang 
+menjadi
+ 
+dasar
+ 
+seluruh
+ 
+sistem
+ 
+sesi
+ dan 
+absensi
+.
+51. 
+Prinsip
+ Desain Inti
+Sistem
+ 
+harus
+ 
+mengikuti
+ 
+prinsip
+ 
+berikut
+:
+Data 
+akademik
+ 
+menentukan
+ 
+hak
+ 
+akses
+.
+Artinya
+:
+Jurusan
+↓
+Rombel
+↓
+Siswa
+dan
+Guru
+↓
+Mapel
+↓
+Penugasan
+ 
+Rombel
+↓
+Sesi
+↓
+Absensi
+Dengan
+ 
+demikian
+, 
+aplikasi
+ 
+tidak
+ 
+bergantung
+ pada input manual yang 
+berulang
+ dan 
+risiko
+ 
+kesalahan
+ 
+administrasi
+ 
+dapat
+ 
+diminimalkan
+.
+52. Acceptance Criteria Utama
+Sistem
+ 
+dianggap
+ 
+sesuai
+ 
+kebutuhan
+ 
+apabila
+:
+Struktur
+ 
+Sekolah
+3 
+jurusan
+ 
+dapat
+ 
+dikelola
+.
+21 
+rombel
+ 
+dapat
+ 
+dikelola
+.
+Siswa
+ 
+terhubung
+ 
+dengan
+ 
+rombel
+.
+Rombel
+ 
+terhubung
+ 
+dengan
+ 
+jurusan
+.
+Guru
+Satu 
+mapel
+ 
+dapat
+ 
+memiliki
+ 2 guru.
+Guru 
+dapat
+ 
+memiliki
+ 
+beberapa
+ 
+rombel
+ 
+penugasan
+.
+Guru 
+hanya
+ 
+dapat
+ 
+membuat
+ 
+sesi
+ 
+untuk
+ 
+rombel
+ 
+penugasannya
+.
+Sesi
+Satu 
+sesi
+ 
+dapat
+ 
+memiliki
+ 
+beberapa
+ 
+rombel
+ target.
+Target 
+sesi
+ 
+tersimpan
+ 
+secara
+ 
+terstruktur
+.
+PIN 
+masuk
+ dan 
+keluar
+ 
+bekerja
+.
+Google Meet 
+dapat
+ 
+diakses
+.
+Absensi
+Siswa
+ 
+hanya
+ 
+dapat
+ check-in pada 
+sesi
+ 
+rombelnya
+.
+Duplicate attendance 
+dicegah
+.
+Check-in 
+menghasilkan
+ Hadir Sebagian.
+Check-out 
+menghasilkan
+ Hadir 
+Penuh
+.
+ALPA 
+dihitung
+ 
+berdasarkan
+ target 
+sesi
+.
+Monitoring
+Kepala
+ Sekolah 
+dapat
+ 
+melihat
+ 
+sesi
+ 
+aktif
+.
+Kepala
+ Sekolah 
+dapat
+ 
+melihat
+ 
+jumlah
+ 
+peserta
+.
+Kepala
+ Sekolah 
+dapat
+ 
+melihat
+ 
+bukti
+ 
+mengajar
+.
+Histori
+ 
+dapat
+ 
+difilter
+.
+Data 
+dapat
+ 
+diekspor
+.
+53. Kesimpulan
+Portal Les TKA 2026/2027 
+dirancang
+ 
+bukan
+ 
+sekadar
+ 
+sebagai
+ 
+aplikasi
+ 
+presensi
+, 
+tetapi
+ 
+sebagai
+ 
+sistem
+ 
+operasional
+ 
+kegiatan
+ 
+pembelajaran
+ yang 
+mengikuti
+ 
+struktur
+ 
+sekolah
+ 
+secara
+ 
+nyata
+.
+Struktur
+ 
+utama
+ 
+sistem
+ 
+adalah
+:
+3 JURUSAN
+    ↓
+21 ROMBEL
+    ↓
+±768 SISWA
+MATA PELAJARAN
+    ↓
+2 GURU / MAPEL
+    ↓
+PEMBAGIAN ROMBEL
+    ↓
+SESI LES
+    ↓
+ABSENSI SISWA
+    ↓
+BUKTI MENGAJAR
+    ↓
+MONITORING KEPALA SEKOLAH
+Dengan
+ 
+desain
+ 
+ini
+, 
+sistem
+ 
+dapat
+ 
+menangani
+ 
+pembagian
+ guru yang 
+berbeda
+ 
+antar-rombel
+ 
+tanpa
+ 
+membuat
+ guru 
+melihat
+ 
+atau
+ 
+mengelola
+ 
+siswa
+ yang 
+bukan
+ 
+menjadi
+ 
+tanggung
+ 
+jawabnya
+.
+Status PRD: READY FOR SYSTEM DESIGN & DEVELOPMENT
